@@ -25,13 +25,13 @@
             }
           }
           .icon {
-            font: $font-candidate-icon;
             width: rem-calc(32);
             height: rem-calc(32);
             background-color: $snow;
             margin-left: rem-calc(16);
             border-radius: rem-calc(4);
             &-sigle {
+              font: $font-candidate-icon;
               text-transform: uppercase;
             }
           }
@@ -46,7 +46,7 @@
           .candidate {
             align-items: end !important;
             flex-direction: column;
-            margin-left: rem-calc(20);
+            margin-left: rem-calc(68);
           }
         }
       }

@@ -62,7 +62,6 @@ $maxGrid: 12;
 .container {
   margin: 0 auto;
   width: function.rem-calc(1140);
-
   display: grid;
   grid-template-columns: repeat(12, function.rem-calc(90));
   gap: function.rem-calc(8);

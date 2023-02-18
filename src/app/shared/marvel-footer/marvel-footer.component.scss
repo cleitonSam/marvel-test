@@ -1,0 +1,12 @@
+@import '../../../scss/abstract/variables';
+@import '../../../scss/tools/rem-calc';
+
+:host {
+  footer {
+    position: fixed;
+    bottom: 0;
+    background-color: $white;
+    width: 100%;
+    height: rem-calc(90);
+  }
+}

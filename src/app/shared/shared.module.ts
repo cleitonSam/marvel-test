@@ -6,6 +6,6 @@ import { MarvelSearchComponent } from './marvel-search/marvel-search.component';
 @NgModule({
   declarations: [MarvelHeaderComponent, MarvelSearchComponent],
   imports: [CommonModule],
-  exports: [MarvelHeaderComponent],
+  exports: [MarvelHeaderComponent, MarvelSearchComponent],
 })
 export class SharedModule {}

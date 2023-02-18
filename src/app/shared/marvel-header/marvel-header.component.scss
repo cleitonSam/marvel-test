@@ -52,4 +52,15 @@
       }
     }
   }
+  @media (max-width: 388px) {
+    header {
+      nav {
+        ul {
+          .candidate {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
 }

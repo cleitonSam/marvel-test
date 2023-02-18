@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@700&family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 $white: #ffffff;
 $snow: #f5f5f5;
 $dark-snow: #e5e5e5;
@@ -6,6 +9,9 @@ $dark-smoke: #555555;
 $dark-blue: #167abc;
 $border-shodow: #00000033;
 
+$font-candidate-name: normal normal bold 14px/20px PT Sans Caption;
+$font-candidate-info: normal normal normal 14px/20px PT Sans Caption;
+$font-candidate-icon: normal normal bold 15px/10px PT Sans Caption;
 $font-title-search-characters: normal normal bold 32px/30px PT Sans Caption;
 $font-subtitle-character-name: normal normal bold 16px/24px PT Sans Caption;
 $font-name-characters: normal normal bold 16px/22px PT Sans;

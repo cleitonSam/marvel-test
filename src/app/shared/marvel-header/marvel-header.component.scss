@@ -1,0 +1,55 @@
+@import '../../../scss/abstract/variables';
+@import '../../../scss/tools/rem-calc';
+
+:host {
+  header {
+    color: $dark-smoke;
+    nav {
+      background-color: $white;
+      height: rem-calc(64);
+      padding: 0px 24px;
+
+      img {
+        width: rem-calc(96);
+        height: rem-calc(24);
+      }
+
+      ul {
+        li {
+          .candidate {
+            &-name {
+              font: $font-candidate-name;
+            }
+            &-info {
+              font: $font-candidate-info;
+            }
+          }
+          .icon {
+            font: $font-candidate-icon;
+            width: rem-calc(32);
+            height: rem-calc(32);
+            background-color: $snow;
+            margin-left: rem-calc(16);
+            border-radius: rem-calc(4);
+            &-sigle {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 790px) {
+    header {
+      nav {
+        ul {
+          .candidate {
+            align-items: end !important;
+            flex-direction: column;
+            margin-left: rem-calc(20);
+          }
+        }
+      }
+    }
+  }
+}

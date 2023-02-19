@@ -1,0 +1,22 @@
+<div class="container">
+  <app-marvel-search></app-marvel-search>
+  <section class="row align-items-center">
+    <div class="position col-4">Personagem</div>
+    <div class="col-4">Séries</div>
+    <div class="col-4">Eventos</div>
+  </section>
+  <div
+    class="app-card row align-items-center"
+    *ngFor="
+  let t of tableContent"
+  >
+    <div class="app-card-position d-flex align-items-center col-4">
+      <div class="i">
+        <img src="../../../assets/image/logo.svg" width="52" alt="" />
+      </div>
+      <div class="app-card-name">Abner Jenkins</div>
+    </div>
+    <div class="col-4">{{t.name}}</div>
+    <div class="col-4">{{t.name}}</div>
+  </div>
+</div>

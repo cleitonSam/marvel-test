@@ -1,0 +1,29 @@
+@import '../../../scss/abstract/variables';
+@import '../../../scss/tools/rem-calc';
+
+.container {
+  section {
+    font: $font-description-info;
+    color: $smoke;
+    margin-top: 40px;
+    .position {
+      margin-left: 24px;
+    }
+  }
+  .app-card {
+    height: 90px;
+    box-sizing: border-box;
+    background: white;
+    box-shadow: 0px 0px 5px #00000033;
+    border-radius: 4px;
+    color: $dark-smoke;
+    font: $font-info-characters;
+    &-position {
+      margin-left: 24px;
+    }
+    &-name {
+      margin-left: 24px;
+      font: $font-name-characters;
+    }
+  }
+}

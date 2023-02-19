@@ -22,7 +22,13 @@
         box-shadow: 0px 0px 5px #00000033;
         border-radius: 4px;
         color: $dark-smoke;
+        cursor: pointer;
         font: $font-info-characters;
+        transition: all ease 0.2s;
+        &:hover {
+          box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.5);
+          transform: translateY(-1px);
+        }
         &-position {
           margin-left: 24px;
         }

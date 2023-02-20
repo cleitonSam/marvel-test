@@ -1,49 +1,37 @@
-@import '../../../scss/abstract/variables';
 @import '../../../scss/tools/rem-calc';
 
 :host {
-  main {
-    position: relative;
-    margin-bottom: 24px;
-    .container {
-      min-height: 100vh;
-      section {
-        font: $font-description-info;
-        color: $smoke;
-        margin-top: 40px;
-        .position {
-          margin-left: 24px;
-        }
-      }
-      .app-card {
-        height: 90px;
-        box-sizing: border-box;
-        background: white;
-        border-radius: 4px;
-        color: $dark-smoke;
-        cursor: pointer;
-        box-shadow: 0px 0px 2px #00000033;
-        font: $font-info-characters;
-        transition: all ease 0.2s;
-        &:hover {
-          box-shadow: 0px 0px 5px #00000033;
-        }
-        &-position {
-          margin-left: 24px;
-        }
-        &-name {
-          margin-left: 24px;
-          font: $font-name-characters;
-        }
-      }
+  width: 100%;
+
+  .listagem {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 63px 0;
+    &-name {
+      padding: 24px;
+    }
+    .pokemon {
+      position: relative;
+      display: flex;
+      background: white;
+      width: calc(100% - 2.5rem);
+      height: 88px;
+      margin-bottom: rem-calc(10);
+      padding: 24px;
+      box-shadow: 0px 0px 5px #00000033;
+      border-radius: 4px;
+      text-decoration: none;
+      color: black;
     }
   }
+}
 
-  footer {
-    position: relative;
-    bottom: 0;
-    background-color: $white;
-    width: 100%;
-    height: rem-calc(90);
-  }
+footer {
+  bottom: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #eee;
+  padding: 3px 15px;
+  height: 90px !important;
 }

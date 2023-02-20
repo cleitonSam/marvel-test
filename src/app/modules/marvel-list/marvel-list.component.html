@@ -1,39 +1,58 @@
-<main>
+<app-marvel-search (emmitSearch)="getSearch($event)"></app-marvel-search>
+<div class="output">
   <div class="container">
-    <app-marvel-search></app-marvel-search>
-    <section class="row align-items-center">
-      <div class="position col-4">Personagem</div>
-      <div class="col-4">Séries</div>
-      <div class="col-4">Eventos</div>
-    </section>
-    <div
-      class="app-card row align-items-center"
-      *ngFor="
-  let t of tableContent  | slice
-  : (pagination.currentPage - 1) * pagination.pageSize
-  : pagination.currentPage * pagination.pageSize
-"
-    >
-      <div class="app-card-position d-flex align-items-center col-4">
-        <div class="i">
-          <img src="../../../assets/image/logo.svg" width="52" alt="" />
-        </div>
-        <div class="app-card-name">Abner Jenkins</div>
+    <section class="listagem row">
+      <div class="listagem-name row">
+        <div class="col-4">Personagens</div>
+        <div class="col-4">Series</div>
+        <div class="col-4">Eventos</div>
       </div>
-      <div class="col-4">{{t.name}}</div>
-      <div class="col-4">{{t.name}}</div>
-    </div>
+      <ng-template
+        ngFor
+        let-pokemon
+        [ngForOf]="getAllPokemons | slice
+  : (pagination.currentPage - 1) * pagination.pageSize
+  : pagination.currentPage * pagination.pageSize "
+      >
+        <a [routerLink]="['details', pokemon.id]" class="pokemon col-12 d-flex align-items-center" *ngIf="pokemon.name">
+          <section class="pokemon__status d-flex align-items-center row col-4">
+            <ul>
+              <img src="{{pokemon.thumbnail.path}}.{{pokemon.thumbnail.extension}}" width="52" alt="" />
+            </ul>
+            <h2>{{ pokemon.name }}</h2>
+          </section>
+          <section class="row">
+            <div class="col-12 align-items-center">
+              <ul *ngFor="let item of pokemon.series.items; let i =index">
+                <div *ngIf="i<3">
+                  <p>{{item.name}}</p>
+                </div>
+              </ul>
+            </div>
+          </section>
+          <section class="row">
+            <div class="col-12 align-items-center">
+              <ul *ngFor="let item of pokemon.events.items; let i =index">
+                <div *ngIf="i<4">
+                  <p>{{item.name}}</p>
+                </div>
+              </ul>
+            </div>
+          </section>
+        </a>
+      </ng-template>
+    </section>
   </div>
-</main>
+</div>
 
 <footer class="row d-flex justify-content-center align-items-center">
   <div class="a">
     <app-marvel-pagination
       #pagination
-      [collectionSize]="tableContent.length"
+      [collectionSize]="getAllPokemons.length"
       [pageSize]="10"
       [firstLastButtons]="true"
-      [maxSize]="0"
+      [maxSize]="5"
     ></app-marvel-pagination>
   </div>
 </footer>

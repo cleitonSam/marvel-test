@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MarvelHeaderComponent } from './marvel-header/marvel-header.component';
 import { MarvelSearchComponent } from './marvel-search/marvel-search.component';
 import { MarvelPaginationComponent } from './marvel-pagination/marvel-pagination.component';
+import { MarvelLoadingComponent } from './marvel-loading/marvel-loading.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [MarvelHeaderComponent, MarvelSearchComponent, MarvelPaginationComponent],
-  imports: [CommonModule],
-  exports: [MarvelHeaderComponent, MarvelSearchComponent, MarvelPaginationComponent],
+  declarations: [MarvelHeaderComponent, MarvelSearchComponent, MarvelPaginationComponent, MarvelLoadingComponent],
+  imports: [CommonModule, FormsModule],
+  exports: [MarvelHeaderComponent, MarvelSearchComponent, MarvelPaginationComponent, MarvelLoadingComponent],
 })
 export class SharedModule {}

@@ -27,9 +27,7 @@ export class MarvelDetailsComponent implements OnInit {
 
     return forkJoin([series, comics]).subscribe({
       next: (marvel) => {
-        (this.malvelHeros = marvel), console.log(this.malvelHeros);
-
-        this.isLoading = true;
+        (this.malvelHeros = marvel), (this.isLoading = true);
       },
       error: (err) => (this.apiError = true),
     });

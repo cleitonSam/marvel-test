@@ -1,37 +1,84 @@
+@import '../../../scss/abstract/variables';
 @import '../../../scss/tools/rem-calc';
 
 :host {
   width: 100%;
-
-  .listagem {
+  height: 100vh;
+  .listing {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 63px 0;
+    margin-top: rem-calc(30);
     &-name {
-      padding: 24px;
+      padding: rem-calc(24);
+      font: $font-description-info;
+      color: $smoke;
     }
-    .pokemon {
+    .marvel {
       position: relative;
       display: flex;
       background: white;
       width: calc(100% - 2.5rem);
-      height: 88px;
+      height: rem-calc(88);
       margin-bottom: rem-calc(10);
-      padding: 24px;
-      box-shadow: 0px 0px 5px #00000033;
-      border-radius: 4px;
+      padding-left: rem-calc(24);
+      box-shadow: 0px 0px 5px $border-shodow;
+      border-radius: rem-calc(4);
       text-decoration: none;
-      color: black;
+      color: $dark-smoke;
+      section {
+        ul {
+          img {
+            width: rem-calc(48);
+            height: rem-calc(48);
+            border-radius: rem-calc(4);
+            margin-right: rem-calc(24);
+          }
+        }
+        .marvelHeros {
+          font: $font-name-characters;
+        }
+      }
+      p {
+        font: $font-info-characters !important;
+      }
+    }
+  }
+  @media (max-width: 790px) {
+    .listing {
+      justify-content: center;
+      &-series {
+        display: none !important;
+      }
+      &-events {
+        display: none !important;
+      }
+      .marvel {
+        section {
+          width: 100%;
+        }
+        p {
+          display: none !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 388px) {
+    header {
+      nav {
+        ul {
+          .candidate {
+            display: none !important;
+          }
+        }
+      }
     }
   }
 }
 
 footer {
-  bottom: 0;
-  flex-shrink: 0;
-  flex-grow: 0;
-  background: #eee;
+  bottom: 0px !important;
+  background-color: white;
   padding: 3px 15px;
   height: 90px !important;
 }

@@ -8,7 +8,7 @@
     nav {
       background-color: $white;
       height: rem-calc(64);
-      padding: 0px 24px;
+      padding: 0px rem-calc(24);
 
       img {
         width: rem-calc(96);

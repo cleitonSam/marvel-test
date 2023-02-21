@@ -3,11 +3,9 @@
     <li *ngIf="firstLastButtons">
       <button *ngIf="currentPage >= 3" (click)="selectPageNumber(1)">««</button>
     </li>
-
     <li *ngIf="nextPreviousButtons">
       <button *ngIf="currentPage > 1" (click)="previous()">«</button>
     </li>
-
     <ng-container *ngFor="let p of totalPages; index as i">
       <li *ngIf="i + 1 >= currentPage - maxSize && i + 1 <= currentPage + maxSize">
         <button [class]="currentPage === i + 1 ? 'page-item-active' : ''" (click)="selectPageNumber(i + 1)">
@@ -15,11 +13,9 @@
         </button>
       </li>
     </ng-container>
-
     <li *ngIf="nextPreviousButtons">
       <button *ngIf="currentPage != 5" (click)="next()">»</button>
     </li>
-
     <li *ngIf="firstLastButtons">
       <button *ngIf="currentPage < 4" (click)="selectPageNumber(totalPages.length)">»»</button>
     </li>

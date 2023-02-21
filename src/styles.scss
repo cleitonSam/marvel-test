@@ -2,7 +2,12 @@
 @import './scss/abstract/variables';
 
 html,
-body {
+body,
+app-root {
   height: 100%;
+}
+body {
+  margin-bottom: 0;
+  margin-top: 0;
   background-color: $dark-snow;
 }

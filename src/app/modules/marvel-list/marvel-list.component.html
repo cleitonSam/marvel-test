@@ -1,55 +1,62 @@
 <app-marvel-search (emmitSearch)="getSearch($event)"></app-marvel-search>
-<div class="output">
-  <div class="container">
-    <section class="listagem row">
-      <div class="listagem-name row">
-        <div class="col-4">Personagens</div>
-        <div class="col-4">Series</div>
-        <div class="col-4">Eventos</div>
-      </div>
-      <ng-template
-        ngFor
-        let-pokemon
-        [ngForOf]="getAllPokemons | slice
+
+<div class="container" *ngIf=" isLoading; else loading">
+  <section class="listing row">
+    <div class="listing-name row">
+      <div class="col-4 listing-character">Personagens</div>
+      <div class="col-4 listing-series">Series</div>
+      <div class="col-4 listing-events">Eventos</div>
+    </div>
+    <ng-template
+      ngFor
+      let-marvelHeros
+      [ngForOf]="getAllMalvel | slice
   : (pagination.currentPage - 1) * pagination.pageSize
   : pagination.currentPage * pagination.pageSize "
+    >
+      <a
+        [routerLink]="['details', marvelHeros.id]"
+        class="marvel col-12 d-flex align-items-center"
+        *ngIf="marvelHeros.name"
       >
-        <a [routerLink]="['details', pokemon.id]" class="pokemon col-12 d-flex align-items-center" *ngIf="pokemon.name">
-          <section class="pokemon__status d-flex align-items-center row col-4">
-            <ul>
-              <img src="{{pokemon.thumbnail.path}}.{{pokemon.thumbnail.extension}}" width="52" alt="" />
+        <section class="d-flex align-items-center row col-4">
+          <ul>
+            <img src="{{marvelHeros.thumbnail.path}}.{{marvelHeros.thumbnail.extension}}" alt="{{marvelHeros.name}}" />
+          </ul>
+          <div class="marvelHeros">{{ marvelHeros.name }}</div>
+        </section>
+        <section class="listing-series row">
+          <div class="col-12 align-items-center">
+            <ul *ngFor="let item of marvelHeros.series.items; let i =index">
+              <div *ngIf="i<3">
+                <p>{{item.name}}</p>
+              </div>
             </ul>
-            <h2>{{ pokemon.name }}</h2>
-          </section>
-          <section class="row">
-            <div class="col-12 align-items-center">
-              <ul *ngFor="let item of pokemon.series.items; let i =index">
-                <div *ngIf="i<3">
-                  <p>{{item.name}}</p>
-                </div>
-              </ul>
-            </div>
-          </section>
-          <section class="row">
-            <div class="col-12 align-items-center">
-              <ul *ngFor="let item of pokemon.events.items; let i =index">
-                <div *ngIf="i<4">
-                  <p>{{item.name}}</p>
-                </div>
-              </ul>
-            </div>
-          </section>
-        </a>
-      </ng-template>
-    </section>
-  </div>
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-12 align-items-center">
+            <ul *ngFor="let item of marvelHeros.events.items; let i =index">
+              <div *ngIf="i<4">
+                <p>{{item.name}}</p>
+              </div>
+            </ul>
+          </div>
+        </section>
+      </a>
+    </ng-template>
+  </section>
 </div>
+
+<ng-template #loading>
+  <app-marvel-loading></app-marvel-loading>
+</ng-template>
 
 <footer class="row d-flex justify-content-center align-items-center">
   <div class="a">
     <app-marvel-pagination
       #pagination
-      [collectionSize]="getAllPokemons.length"
+      [collectionSize]="getAllMalvel.length"
       [pageSize]="10"
       [firstLastButtons]="true"
       [maxSize]="5"

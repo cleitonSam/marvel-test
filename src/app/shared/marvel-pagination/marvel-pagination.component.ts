@@ -14,13 +14,15 @@ export class MarvelPaginationComponent implements OnInit {
   @Input() nextPreviousButtons = true;
   totalPages: any[] = [];
 
-  constructor() {}
-
   ngOnInit(): void {
-    this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
+    this.totalPaginations();
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
+  }
+
+  totalPaginations() {
     this.totalPages = new Array(Math.ceil(this.collectionSize / this.pageSize));
   }
 

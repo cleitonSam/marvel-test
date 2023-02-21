@@ -12,26 +12,28 @@ export class MarvelListComponent implements OnInit {
   public apiError: boolean = false;
   public page: number = 1;
 
-  private setAllMarvel: any;
+  public setAllMarvel: any;
   public getAllMalvel: any[] = [];
 
   constructor(private marvelService: MarvelService, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.marvelService.apiListAllPokemons.subscribe({
-      next: (marvel) => {
-        console.log(marvel);
-
-        this.setAllMarvel = marvel;
-        this.getAllMalvel = this.setAllMarvel;
-        this.isLoading = true;
-      },
-      error: (err) => ((this.apiError = true), console.log(err)),
-    });
+    this.malvelCharacters();
   }
 
   ngOnChanges() {
     this.cdRef.detectChanges();
+  }
+
+  malvelCharacters() {
+    this.marvelService.apiListAllMarvel.subscribe({
+      next: (marvel) => {
+        this.setAllMarvel = marvel;
+        this.getAllMalvel = this.setAllMarvel;
+        this.isLoading = true;
+      },
+      error: (err) => (this.apiError = true),
+    });
   }
 
   pageEvent(pageNumber: number): void {

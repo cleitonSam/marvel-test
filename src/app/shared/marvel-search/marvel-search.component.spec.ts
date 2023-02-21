@@ -19,4 +19,11 @@ describe('MarvelSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit on click', () => {
+    const search = 'test';
+    jest.spyOn(component.emmitSearch, 'emit');
+    component.search(search);
+    expect(component.emmitSearch.emit).toHaveBeenCalledWith('test');
+  });
 });

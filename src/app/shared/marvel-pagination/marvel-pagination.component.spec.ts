@@ -19,4 +19,28 @@ describe('MarvelPaginationComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should totalPaginations', () => {
+    component.collectionSize = 10;
+    component.pageSize = 5;
+    component.totalPaginations();
+    expect(component.totalPages).toEqual([,]);
+  });
+
+  it('should selectPageNumber', () => {
+    component.selectPageNumber(5);
+    expect(component.currentPage).toEqual(5);
+  });
+
+  it('should next', () => {
+    component.selectPageNumber(5);
+    component.next();
+    expect(component.currentPage).toEqual(5);
+  });
+
+  it('should previous', () => {
+    component.selectPageNumber(5);
+    component.previous();
+    expect(component.currentPage).toEqual(4);
+  });
 });

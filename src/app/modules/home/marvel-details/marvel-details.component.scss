@@ -163,3 +163,12 @@ figure {
 .shape-box_half:hover > .after {
   opacity: 1;
 }
+
+@media (max-width: 790px) {
+  .box-wrapper {
+    flex-direction: column;
+  }
+  .shape-box {
+    width: 100%;
+  }
+}

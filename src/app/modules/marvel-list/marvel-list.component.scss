@@ -63,14 +63,11 @@
       }
     }
   }
-  @media (max-width: 388px) {
-    header {
-      nav {
-        ul {
-          .candidate {
-            display: none !important;
-          }
-        }
+  @media (max-width: 590px) {
+    section {
+      width: 327px;
+      a {
+        width: 100%;
       }
     }
   }

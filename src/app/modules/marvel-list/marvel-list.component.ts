@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+
 import { MarvelService } from 'src/app/core/service/marvel.service';
 
 @Component({
@@ -7,8 +8,6 @@ import { MarvelService } from 'src/app/core/service/marvel.service';
   styleUrls: ['./marvel-list.component.scss'],
 })
 export class MarvelListComponent implements OnInit {
-  constructor(private marvelService: MarvelService, private cdRef: ChangeDetectorRef) {}
-
   public isLoading: boolean = false;
   public apiError: boolean = false;
   public page: number = 1;
@@ -16,9 +15,7 @@ export class MarvelListComponent implements OnInit {
   private setAllMarvel: any;
   public getAllMalvel: any[] = [];
 
-  ngOnChanges() {
-    this.cdRef.detectChanges();
-  }
+  constructor(private marvelService: MarvelService, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.marvelService.apiListAllPokemons.subscribe({
@@ -29,6 +26,10 @@ export class MarvelListComponent implements OnInit {
       },
       error: (err) => (this.apiError = true),
     });
+  }
+
+  ngOnChanges() {
+    this.cdRef.detectChanges();
   }
 
   pageEvent(pageNumber: number): void {

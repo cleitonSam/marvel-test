@@ -1,0 +1,14 @@
+<main>
+  <div class="container">
+    <section class="row align-items-center">
+      <article class="col-5">
+        <h1>Busca de personagens</h1>
+        <h2>Nome do Personagem</h2>
+        <form class="d-flex align-items-center">
+          <input type="text" #input (keyup)="search(input.value)" placeholder="Search" />
+          <img src="../../../assets/image/search.svg" alt="" />
+        </form>
+      </article>
+    </section>
+  </div>
+</main>

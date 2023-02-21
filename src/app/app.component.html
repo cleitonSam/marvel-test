@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<app-marvel-header></app-marvel-header>
+
+<div [@triggerName]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

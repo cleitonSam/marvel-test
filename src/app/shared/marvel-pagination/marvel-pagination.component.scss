@@ -1,0 +1,17 @@
+@import '../../../scss/abstract/variables';
+@import '../../../scss/tools/rem-calc';
+
+button {
+  margin-left: rem-calc(16);
+  width: rem-calc(40);
+  height: rem-calc(32);
+  background: $snow 0% 0% no-repeat padding-box;
+  border: 1px solid $dark-snow;
+  font: normal normal normal 14px/19px PT Sans;
+  color: $dark-smoke;
+}
+
+.page-item-active {
+  color: $white;
+  background-color: $dark-blue;
+}

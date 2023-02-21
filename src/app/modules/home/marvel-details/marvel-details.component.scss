@@ -1,34 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import '../../../../scss/abstract/variables';
+@import '../../../../scss/tools/rem-calc';
 
+.container {
+  .text {
+    font: $font-name-characters;
+    margin-top: 30px;
+  }
+  .button {
+    width: 200px;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: darkred;
+    }
+  }
+  figure {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .box-wrapper {
   flex-wrap: wrap;
 }
 
 .row {
-  margin-top: 30px;
+  margin-top: rem-calc(30);
 }
 
-.botao {
-  width: 200px;
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-
-  &:hover {
-    background-color: darkred;
-  }
-}
-
-figure {
-  display: flex;
-  flex-wrap: wrap;
-}
 .shape-box {
   position: relative;
   z-index: 1;
@@ -147,7 +154,6 @@ figure {
   transition: opacity 0.4s;
 }
 
-/*On hover*/
 .shape-box_half:hover:before {
   transform: skewY(20deg);
 }
@@ -163,8 +169,15 @@ figure {
 .shape-box_half:hover > .after {
   opacity: 1;
 }
-
 @media (max-width: 790px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    .info-top {
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .box-wrapper {
     flex-direction: column;
   }

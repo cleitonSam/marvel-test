@@ -20,11 +20,13 @@ export class MarvelListComponent implements OnInit {
   ngOnInit(): void {
     this.marvelService.apiListAllPokemons.subscribe({
       next: (marvel) => {
+        console.log(marvel);
+
         this.setAllMarvel = marvel;
         this.getAllMalvel = this.setAllMarvel;
         this.isLoading = true;
       },
-      error: (err) => (this.apiError = true),
+      error: (err) => ((this.apiError = true), console.log(err)),
     });
   }
 

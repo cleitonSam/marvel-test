@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
 import { routeTransitionAnimations } from './core/router-animation/route-transition-animations';
 
 @Component({

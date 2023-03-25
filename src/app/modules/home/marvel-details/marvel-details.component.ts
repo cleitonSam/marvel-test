@@ -11,8 +11,8 @@ import { MarvelService } from 'src/app/core/service/marvel.service';
 })
 export class MarvelDetailsComponent implements OnInit {
   public malvelHeros: any = [];
-  public isLoading: boolean = false;
-  public apiError: boolean = false;
+  public isLoading = false;
+  public apiError = false;
 
   constructor(private activatedRoute: ActivatedRoute, private marvelService: MarvelService) {}
 
